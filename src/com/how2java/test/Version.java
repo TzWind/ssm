@@ -1,6 +1,6 @@
 package com.how2java.test;
 
-public class version {
+public class Version {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
