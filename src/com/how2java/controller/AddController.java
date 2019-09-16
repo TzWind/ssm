@@ -19,16 +19,27 @@ public class AddController {
 	@Autowired
 	CategoryService categoryService;
 	
-	
-	
+	//后台取值方法1
 	@RequestMapping("addData")
-	public String addData(HttpServletRequest request) {
-		Category c=new Category();
-		c.setName(request.getParameter("name"));
-		int count= categoryService.addData(c);
-		
+	public String addData(String name) {
+		if(name!=null) {
+			Category c=new Category();
+			c.setName(name);
+			int count= categoryService.addData(c);
+		}
 		return "addData";
 	}
+	
+	//后台取值方法2
+//	@RequestMapping("addData")
+//	public String addData(HttpServletRequest request) {
+//		if(name!=null) {
+//			Category c=new Category();
+//			c.setName(name);
+//			int count= categoryService.addData(c);
+//		}
+//		return "addData";
+//	}
 	
 	
 //	public ModelAndView addData(HttpServletRequest request){
