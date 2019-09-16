@@ -17,6 +17,15 @@ public class CategoryServiceImpl  implements CategoryService{
 	
 	public List<Category> list(){
 		return categoryMapper.list();
+	}
+
+
+	@Override
+	public int addData(Category c) {
+		
+//		Category c1=new Category();
+//		c1.setName("test");
+		return categoryMapper.add(c);
 	};
 
 }

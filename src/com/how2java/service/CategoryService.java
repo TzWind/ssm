@@ -7,5 +7,7 @@ import com.how2java.pojo.Category;
 public interface CategoryService {
 
 	List<Category> list();
+	
+	int  addData(Category c);
 
 }
