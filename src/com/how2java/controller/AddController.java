@@ -3,7 +3,6 @@ package com.how2java.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,7 @@ public class AddController {
 	//后台取值方法1
 	@RequestMapping("addData")
 	public String addData(String name) {
-		if(name!=null) {
+		if(name!=null&&name!="") {
 			Category c=new Category();
 			c.setName(name);
 			int count= categoryService.addData(c);
@@ -30,10 +29,20 @@ public class AddController {
 		return "addData";
 	}
 	
+	@RequestMapping("show")
+	public ModelAndView showData(){
+		ModelAndView mav = new ModelAndView();
+		List<Category> cs= categoryService.list();
+		
+		mav.addObject("cs", cs);
+		mav.setViewName("showData");
+		return mav;
+	}
+	
 	//后台取值方法2 
 //	@RequestMapping("addData")
 //	public String addData(HttpServletRequest request) {
-//		if(name!=null) {
+//		if(name!=null&&name!="") {
 //			Category c=new Category();
 //			c.setName(name);
 //			int count= categoryService.addData(c);

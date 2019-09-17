@@ -9,5 +9,9 @@ public interface CategoryService {
 	List<Category> list();
 	
 	int  addData(Category c);
-
+	
+	void deleteData(int id);
+	
+	void modifyData(Category c);
+ 
 }

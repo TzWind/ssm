@@ -16,3 +16,4 @@
         <td>条记录</td>
     </tr>
    </table>
+   <a href="show" >查看结果 </a>

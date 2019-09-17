@@ -26,6 +26,18 @@ public class CategoryServiceImpl  implements CategoryService{
 //		Category c1=new Category();
 //		c1.setName("test");
 		return categoryMapper.add(c);
-	};
+	}
+
+
+	@Override
+	public void deleteData(int id) {
+		categoryMapper.delete(id);
+	}
+
+
+	@Override
+	public void modifyData(Category c) {
+		categoryMapper.update(c);
+	}
 
 }
