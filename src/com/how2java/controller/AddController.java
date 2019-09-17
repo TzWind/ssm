@@ -30,7 +30,7 @@ public class AddController {
 		return "addData";
 	}
 	
-	//后台取值方法2
+	//后台取值方法2 
 //	@RequestMapping("addData")
 //	public String addData(HttpServletRequest request) {
 //		if(name!=null) {
