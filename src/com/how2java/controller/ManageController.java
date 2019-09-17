@@ -24,7 +24,7 @@ public class ManageController {
 		return "manageData";
 	}
 	
-	//ÐÞ¸Ä
+	//ÐÞ¸Ä 
 	@RequestMapping("modify")
 	public String modifyData(String id,String name) {
 		if(id!=null&&id!="") {
