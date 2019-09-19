@@ -13,5 +13,7 @@ public interface CategoryService {
 	void deleteData(int id);
 	
 	void modifyData(Category c);
+	
+	Category queryData(int id);
  
 }

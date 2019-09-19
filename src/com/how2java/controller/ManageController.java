@@ -45,6 +45,21 @@ public class ManageController {
 			return "manageData";
 		}
 	
+	//∂®œÚ≤È—Ø
+			@RequestMapping("query")
+			public ModelAndView queryData(String id) {
+				if(id!=null&&id!="") {
+					ModelAndView mav = new ModelAndView();
+					Category cs= categoryService.queryData(Integer.parseInt(id));
+					
+					mav.addObject("cs", cs);
+					mav.setViewName("showOne");
+					return mav;
+					
+				}
+				return null;
+			}
+		
 	@RequestMapping("show2")
 	public ModelAndView showData(){
 		ModelAndView mav = new ModelAndView();

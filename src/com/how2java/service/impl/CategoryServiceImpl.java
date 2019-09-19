@@ -40,4 +40,10 @@ public class CategoryServiceImpl  implements CategoryService{
 		categoryMapper.update(c);
 	}
 
+
+	@Override
+	public Category queryData(int id) {
+		return categoryMapper.get(id);
+	}
+
 }

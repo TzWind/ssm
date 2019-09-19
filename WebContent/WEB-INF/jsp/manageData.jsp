@@ -18,6 +18,13 @@
    
    </form>
    
-   <a href="show2" >查看结果 </a>
+   <form action="query">
+   
+   ID ：<input type="text" name="id" value="">
+   <input type="submit" value="定向查询">
+   
+   </form>
+   
+   <a href="show2" >查看全部 </a>
    
    
