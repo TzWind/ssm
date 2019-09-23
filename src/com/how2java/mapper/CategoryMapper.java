@@ -27,6 +27,8 @@ public interface CategoryMapper {
     
     public User queryuser(String name);
     
+    public int useradd(User user);
+    
     
     
 }

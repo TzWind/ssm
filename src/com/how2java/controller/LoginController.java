@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.how2java.pojo.Category;
+import com.how2java.pojo.User;
 import com.how2java.service.CategoryService;
 
 @Controller
@@ -47,8 +48,6 @@ public class LoginController {
 		if(categoryService.queryUser(username) != null) {
 			if(categoryService.queryUser(username).getPassword().equals(password)) {
 				
-				session.setAttribute("info","登录成功，欢迎"+username);
-				//System.out.print("登录成功，欢迎"+username);
 				return "index";
 			}else {
 				session.setAttribute("info","密码错误，请重新输入！");
@@ -60,8 +59,30 @@ public class LoginController {
 			//System.out.print("没有这个用户，请注册！");
 			return "login";
 		}
+	}
+	
+	@RequestMapping(value="regist",method=RequestMethod.POST)
+	public String regist(String username,String password,String repassword,String tel,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		if(username!=null&&username!=""&&password!=null&&password!=""&&repassword!=null&&repassword!=""&&tel!=null&&tel!=""){
 		
-		
+			if(password.equals(repassword)) {
+				//这里需要new？
+				User user=new User();
+				user.setUsername(username);
+				user.setPassword(password);
+				user.setTelphone(tel);
+				categoryService.userAdd(user);
+				return "login";
+				
+			}else {
+				session.setAttribute("registinfo", "两次密码不相同！");
+				return "register";
+			}
+		}else {
+			session.setAttribute("registinfo", "内容不能为空");
+			return "register";
+		}
 	}
 	
 	

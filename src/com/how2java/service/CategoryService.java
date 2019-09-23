@@ -19,5 +19,7 @@ public interface CategoryService {
 	
 	User queryUser(String username) ;
 	
+	int userAdd(User user);
+	
  
 }

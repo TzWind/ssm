@@ -54,4 +54,11 @@ public class CategoryServiceImpl  implements CategoryService{
 		return categoryMapper.queryuser(username);
 	}
 
+
+	@Override
+	public int userAdd(User user) {
+		
+		return categoryMapper.useradd(user);
+	}
+
 }

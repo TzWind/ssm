@@ -8,6 +8,10 @@
 	        insert into category_ ( name ) values (#{name})    
 	    </insert>
 	    
+	    <insert id="useradd" parameterType="User" >
+	        insert into user ( username,password,telphone ) values (#{username},#{password},#{telphone})    
+	    </insert>
+	    
 	    <delete id="delete" parameterType="Category" >
 	        delete from category_ where id= #{id}   
 	    </delete>
