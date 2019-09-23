@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.how2java.mapper.CategoryMapper;
 import com.how2java.pojo.Category;
+import com.how2java.pojo.User;
 import com.how2java.service.CategoryService;
 
 @Service
@@ -44,6 +45,13 @@ public class CategoryServiceImpl  implements CategoryService{
 	@Override
 	public Category queryData(int id) {
 		return categoryMapper.get(id);
+	}
+
+
+	@Override
+	public User queryUser(String username) {
+		
+		return categoryMapper.queryuser(username);
 	}
 
 }

@@ -3,6 +3,7 @@ package com.how2java.service;
 import java.util.List;
 
 import com.how2java.pojo.Category;
+import com.how2java.pojo.User;
 
 public interface CategoryService {
 
@@ -15,5 +16,8 @@ public interface CategoryService {
 	void modifyData(Category c);
 	
 	Category queryData(int id);
+	
+	User queryUser(String username) ;
+	
  
 }
